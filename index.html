@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MetroBot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="sidebar-topo">
+        <div class="logo">
+          <div class="logo-icone">M</div>
+          <span class="logo-nome">MetroBot</span>
+        </div>
+        <button class="btn-nova-conversa" id="btnNovaConversa">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Nova conversa
+        </button>
+      </div>
+
+      <div class="historico-secao">
+        <p class="historico-titulo">Histórico</p>
+        <div class="historico-lista" id="historicoLista"></div>
+      </div>
+
+      <div class="sidebar-rodape">
+        <div class="usuario-info" id="usuarioInfo">
+          <div class="usuario-avatar" id="usuarioAvatar">??</div>
+          <span class="usuario-nome" id="usuarioNome">Carregando...</span>
+        </div>
+        <button class="btn-sair" onclick="fazerLogout()">Sair</button>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <div class="topbar">
+        <span class="topbar-titulo">Assistente de Metrologia</span>
+        <span class="topbar-status">
+          <span class="status-dot"></span> Online
+        </span>
+      </div>
+
+      <div class="chatBox" id="chatBox">
+        <div class="boas-vindas" id="boasVindas">
+          <h1>Como posso te ajudar?</h1>
+          <p>Especialista em metrologia, calibração e normas técnicas</p>
+          <div class="sugestoes">
+            <div class="sugestao" onclick="usarSugestao(this)">
+              <strong>O que é incerteza de medição?</strong>
+              <span>Conceito fundamental do VIM</span>
+            </div>
+            <div class="sugestao" onclick="usarSugestao(this)">
+              <strong>Requisitos da ISO/IEC 17025</strong>
+              <span>Norma para laboratórios de calibração</span>
+            </div>
+            <div class="sugestao" onclick="usarSugestao(this)">
+              <strong>Incerteza Tipo A e Tipo B</strong>
+              <span>Como calcular e diferenciar</span>
+            </div>
+            <div class="sugestao" onclick="usarSugestao(this)">
+              <strong>Rastreabilidade metrológica</strong>
+              <span>Conceito e importância prática</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inputArea">
+        <div class="inputBox">
+          <textarea
+            id="inputUsuario"
+            placeholder="Mensagem ao MetroBot"
+            rows="1"
+            autocomplete="off"
+          ></textarea>
+          <button id="btnEnviar" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="19" x2="12" y2="5"></line>
+              <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+          </button>
+        </div>
+        <p class="input-aviso">O MetroBot pode cometer erros. Verifique informações importantes nas normas originais.</p>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

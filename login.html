@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MetroBot · Entrar</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+  <div class="auth-wrapper">
+
+    <div class="auth-logo">
+      <div class="auth-logo-icone">M</div>
+      <span>MetroBot</span>
+    </div>
+
+    <div class="auth-card" id="telaLogin">
+      <h1 class="auth-titulo">Bem-vindo de volta</h1>
+      <p class="auth-sub">Entre com sua conta para continuar</p>
+
+      <div class="form-grupo">
+        <label>E-mail</label>
+        <input type="email" id="loginEmail" placeholder="seu@email.com" />
+      </div>
+
+      <div class="form-grupo">
+        <label>Senha</label>
+        <div class="input-senha">
+          <input type="password" id="loginSenha" placeholder="Sua senha" />
+          <span class="olho" onclick="toggleSenha('loginSenha', this)">👁</span>
+        </div>
+      </div>
+
+      <div class="auth-erro" id="loginErro"></div>
+
+      <button class="btn-auth" onclick="fazerLogin()">Entrar</button>
+
+      <p class="auth-link">
+        Não tem uma conta? <span onclick="mostrarCadastro()">Cadastre-se</span>
+      </p>
+    </div>
+
+    <div class="auth-card" id="telaCadastro" style="display:none">
+      <h1 class="auth-titulo">Criar conta</h1>
+      <p class="auth-sub">Preencha os dados para se cadastrar</p>
+
+      <div class="form-grupo">
+        <label>Nome completo</label>
+        <input type="text" id="cadNome" placeholder="Seu nome" />
+      </div>
+
+      <div class="form-grupo">
+        <label>E-mail</label>
+        <input type="email" id="cadEmail" placeholder="seu@email.com" />
+      </div>
+
+      <div class="form-grupo">
+        <label>Senha</label>
+        <div class="input-senha">
+          <input type="password" id="cadSenha" placeholder="Mínimo 6 caracteres" />
+          <span class="olho" onclick="toggleSenha('cadSenha', this)">👁</span>
+        </div>
+      </div>
+
+      <div class="form-grupo">
+        <label>Confirmar senha</label>
+        <div class="input-senha">
+          <input type="password" id="cadSenhaConf" placeholder="Repita a senha" />
+          <span class="olho" onclick="toggleSenha('cadSenhaConf', this)">👁</span>
+        </div>
+      </div>
+
+      <div class="auth-erro" id="cadErro"></div>
+
+      <button class="btn-auth" onclick="fazerCadastro()">Criar conta</button>
+
+      <p class="auth-link">
+        Já tem uma conta? <span onclick="mostrarLogin()">Entrar</span>
+      </p>
+    </div>
+
+    <p class="auth-rodape">ISO/IEC 17025 · ISO 9001 · VIM · INMETRO</p>
+
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
